@@ -11,5 +11,6 @@ def home(request):
 
 def categoria(request,id):
     categorias = Categoria.objects.all()
-    
-    return render(request,'produto.html',{'categorias':categorias})
+    produtos = Produto.objects.all().filter(categoria=id)
+    return render(request,'produto.html',{'categorias':categorias,
+                                            'produtos':produtos })
