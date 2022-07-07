@@ -1,7 +1,7 @@
 .menu {
     background-color: blue;
-    align-self: center;
-
+    justify-content: center;
+    border: 1px red;
 }
 
 .card {

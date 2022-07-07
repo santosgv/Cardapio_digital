@@ -4,28 +4,10 @@
 {% block 'head' %}
 <link rel="stylesheet" href="{% static 'loja/css/home.css' %}" >
 {% endblock %} 
+
 {% block 'body' %}
+   
+        <h1>{{produto}}</h1>
+        <span>{{produto.preco}}</span>
 
-<div class="container-fluid">
-<h1 class="text-center">Pagina produto</h1>
-
-<div class="container">
-    <div class="row menu">
-        
-        {% for produto in produtos %}
-            <div class="card text-center" style="width: 18rem;">
-        <img src="/media/{{produto.img}}" class="card-img-top" alt="...">
-                <div class="card-body">
-        <h5 class="card-title">{{produto}}</h5>
-        <p class="card-text">{{produto.descricao}}</p>
-        <a href="#" class="btn btn-primary">Ver</a>
-                </div>
-            </div>
-        
-        {% endfor%}
-    </div>
-    
-    <br>
-
-</div>
-{% endblock %}
+ {% endblock%}

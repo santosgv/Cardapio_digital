@@ -10,15 +10,15 @@
 <h1 class="text-center">Produtos</h1>
 
 <div class="container">
-    <div class="row menu">
+    <div class="row menu text-center">
         
         {% for produto in produtos %}
             <div class="card text-center" style="width: 18rem;">
         <img src="/media/{{produto.img}}" class="card-img-top" alt="...">
-                <div class="card-body">
+        <div class="card-body">
         <h5 class="card-title">{{produto}}</h5>
         <p class="card-text">{{produto.descricao}}</p>
-        <a href="#" class="btn btn-primary">Ver</a>
+        <a href="#" class="btn btn-primary">{{produto.id}}</a>
                 </div>
             </div>
         
