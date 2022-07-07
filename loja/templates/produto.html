@@ -5,9 +5,23 @@
 <link rel="stylesheet" href="{% static 'loja/css/home.css' %}" >
 {% endblock %} 
 
+
+    
 {% block 'body' %}
-   
-        <h1>{{produto}}</h1>
-        <span>{{produto.preco}}</span>
+<div class="container-fluid">
+    <h1 class="text-center">produto</h1>
+        <div class="container-fluid">
+            <div class="row menu container-fluid">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="/media/{{produto.img}}" class="card-img-top" alt="...">
+                      <h5 class="card-title">{{produto}}</h5>
+                      <p class="card-text">{{produto.descricao}}</p>
+                      <label for="">{{produto.preco}}</label>
+                    </div>
+                  </div>
+            </div>
+    </div>
+</div>
 
  {% endblock%}

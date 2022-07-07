@@ -16,8 +16,8 @@ def categoria(request,id):
                                             'produtos':produtos })
 
 def produto(request,id):
-    
+    categorias = Categoria.objects.all()
     produto = Produto.objects.get(id=id)
 
-    return render(request,'produto.html',{
+    return render(request,'produto.html',{ 'categorias':categorias,
                                             'produto':produto })
