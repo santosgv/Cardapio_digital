@@ -7,19 +7,19 @@
 {% block 'body' %}
 
 <div class="container-fluid">
-<h1 class="text-center">Pagina produtos</h1>
+<h1 class="text-center " style="color: var(--primeira);">Produtos</h1>
 
 <div class="container-fluid">
     <div class="row menu container-fluid">
         
         {% for produto in produtos %}
             <div class="card text-center" style="width: 18rem;">
-        <img src="/media/{{produto.img}}" class="card-img-top" alt="...">
-                <div class="card-body">
-        <h5 class="card-title">{{produto}}</h5>
-        <p class="card-text">{{produto.descricao}}</p>
-        <a href="{% url 'produto' produto.id  %}" class="btn btn-primary">Ver</a>
-                </div>
+                    <img src="/media/{{produto.img}}" class="card-img-top" alt="{{produto.img}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{produto}}</h5>
+                                <p class="card-text">{{produto.descricao}}</p>
+                                <a href="{% url 'produto' produto.id  %}" class="btn btn-warning" style="color: var(--terceira);">Preço</a>
+                        </div>
             </div>
         
         {% endfor%}

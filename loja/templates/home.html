@@ -1,24 +1,24 @@
 {%extends 'base.html'%}
 {% load static %}
 
+
 {% block 'head' %}
 <link rel="stylesheet" href="{% static 'loja/css/home.css' %}" >
 {% endblock %} 
 {% block 'body' %}
 
 <div class="container-fluid">
-<h1 class="text-center">Produtos</h1>
-
+<h1 class="text-center" style="color: var(--primeira);">Alguns de Nossos</h1>
 <div class="container">
     <div class="row menu text-center">
         
         {% for produto in produtos %}
             <div class="card text-center" style="width: 18rem;">
-        <img src="/media/{{produto.img}}" class="card-img-top" alt="...">
-        <div class="card-body">
-        <h5 class="card-title">{{produto}}</h5>
-        <p class="card-text">{{produto.descricao}}</p>
-        <a href="{% url 'produto' produto.id  %}" class="btn btn-primary">Veja</a>
+            <img src="/media/{{produto.img}}" class="card-img-top" alt="{{produto.img}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{produto}}</h5>
+                        <p class="card-text">{{produto.descricao}}</p>
+                            <a href="{% url 'produto' produto.id  %}" class="btn btn-warning" style="color: var(--terceira);">Preço</a>
                 </div>
             </div>
         

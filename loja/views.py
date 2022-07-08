@@ -3,7 +3,7 @@ from .models import Categoria , Produto
 
 def home(request):
     categorias = Categoria.objects.all()
-    produtos = Produto.objects.all()[:15]
+    produtos = Produto.objects.all().filter(ativo=True)[:15]
 
     return render(request, 'home.html',{'categorias':categorias,
                                         'produtos': produtos,})
@@ -11,7 +11,7 @@ def home(request):
 
 def categoria(request,id):
     categorias = Categoria.objects.all()
-    produtos = Produto.objects.all().filter(categoria=id)
+    produtos = Produto.objects.all().filter(categoria=id).filter(ativo=True)
     return render(request,'produtos.html',{'categorias':categorias,
                                             'produtos':produtos })
 

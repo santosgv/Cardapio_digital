@@ -1,9 +1,23 @@
+:root{
+    --primeira : orange;
+    --segundaria : black;
+    --terceira : #fff;
+}
+
 .menu {
-    background-color: blue;
+    background-color: var(--terceira);
     justify-content: center;
-    border: 1px red;
 }
 
 .card {
     margin: 5px;
+}
+
+.base {
+    background-color: var(--primeira);
+    color: var(--terceira);
+}
+
+.preco {
+    color: green;
 }

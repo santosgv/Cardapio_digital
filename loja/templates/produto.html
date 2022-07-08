@@ -1,23 +1,22 @@
 {%extends 'base.html'%}
 {% load static %}
+{% load humanize %} 
 
 {% block 'head' %}
 <link rel="stylesheet" href="{% static 'loja/css/home.css' %}" >
 {% endblock %} 
 
 
-    
 {% block 'body' %}
 <div class="container-fluid">
-    <h1 class="text-center">produto</h1>
+    <h2 class="card-title text-center" style="color: var(--primeira);">{{produto}}</h2>
         <div class="container-fluid">
             <div class="row menu container-fluid">
                 <div class="card text-center">
                     <div class="card-body">
-                        <img src="/media/{{produto.img}}" class="card-img-top"  style="width: 100%;" alt="...">
-                      <h5 class="card-title">{{produto}}</h5>
-                      <p class="card-text">{{produto.descricao}}</p>
-                      <label for="">{{produto.preco}}</label>
+                        <img src="/media/{{produto.img}}" class="card-img-top"  style="width: 100%;" alt="{{produto.img}}">
+                                <p class="card-text">{{produto.descricao}}</p>
+                                <label class="preco">R$: {{produto.preco|intcomma}}</label>
                     </div>
                   </div>
             </div>
